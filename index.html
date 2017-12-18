@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizza Emporium</title>
+        <link rel="stylesheet" type = "text/css" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="myscripts.js"></script>
+    </head>
+
+    <body>
+        
+        <div class = "heading">
+            <h1>Pizza Emporium</h1>
+            <div class="type">
+                <span class = "links active" id="value" data-link="value">Value</span>
+                <span class = "links" id="traditional" data-link="traditional">Traditional</span>
+                <span class = "links" id="supreme" data-link="supreme">Supreme</span>
+            </div>
+        </div>
+        <div class="home">
+            <div class='order' id = 'order'>
+                <h2>Order</h2>
+                <div id='current_order'></div>
+                
+                <div class='place'>
+                    <span class='price' id = total_price>Total: $0</span>
+                    <span class = 'place_button button'> Place Order </span>
+                </div>
+            </div>
+        <div class="pizzas">
+            <div class="pizza_type" id="value_pizza_type" data-link="value">
+               
+            </div>
+            <div class="pizza_type" id="traditional_pizza_type" data-link="traditional">
+
+            </div>
+        </div>
+        <div class='order_details' id='order_popup'>
+            <div class='popup_name' id='popup_name'>
+            </div>
+            
+            <div class='size_details'>
+                <div class='size_title'>Size</div>
+                <div class='sizes'>
+                    <div class='size' id="medium">Medium</div>
+                    <div class='size' id="large">Large</div>
+                </div>
+            </div>
+            <div class='crust_details'>
+                <div class='crust_title'>Crust</div>
+                <div class='crusts'>
+                    <div class='crust'>Thin</div>
+                    <div class='crust'>Medium</div>
+                    <div class='crust'>Deep</div>
+                </div>
+            </div>
+            <div class='cancel_button button'>
+                Cancel
+            </div>
+            <div class='accept_button button'>
+                Accept
+            </div>
+        </div>
+        <div id="cover"></div>
+
+    </body>
+
+
+</html>
