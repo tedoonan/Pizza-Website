@@ -49,7 +49,7 @@ function displayOrder() {
     mypizza = current_order_names['Cheese0'];
     num_distinct_in_order += 1;
     var div = document.createElement('div');
-    var price = getPizzaPrice(pizza.name);
+    var price = getPizzaPrice(pizza.name) * pizza.quantity;
     total_price += price;
     div.innerHTML = pizza.quantity + ' x ' + pizza.name;
 
@@ -153,6 +153,7 @@ function restoreOrderDefaults() {
 
   $('.base').removeClass("preview");
   $("#" + DEFAULT_BASE).addClass("preview");
+  $('#quantity').html("1");
 }
 
 $(document).ready(function(){
@@ -231,10 +232,22 @@ $(document).ready(function(){
   $('#minus').click(function () {
     $('#quantity').html(function (y, val) {
         var new_val = val * 1 - 1;
-        current_quantity = new_val;
-        return new_val;
+        if (new_val < 1) {
+          return 1;
+        }
+        else {
+          current_quantity = new_val;
+          return new_val;
+        }
     });
   });
-
+    var increased = parseInt($(this).parent().find('.number').text());
+    if (isNaN(increased) || increased > 0) {
+        $(this).parent().find('.number').html(function (t, val) {
+            return val * 1 - 1
+        });
+    } else {
+      return false;
+    }
 
 });

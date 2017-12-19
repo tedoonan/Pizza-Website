@@ -1,6 +1,7 @@
 body {
         font-family: sans-serif;
         width: 1200px;
+        height:90%;
         border: 2px solid rgba(0,0,0,1);
         margin:0 auto;
         align-content:center;
@@ -164,6 +165,7 @@ h2 {
 .size {
 	height:50px;
 	line-height: 50px;
+	cursor:pointer;
 }
 
 .size:hover {
@@ -177,6 +179,7 @@ h2 {
 .detail_title {
 	height:50px;
 	line-height: 50px;
+	font-size: 20px;
 }
 
 .base_details {
@@ -191,6 +194,7 @@ h2 {
 .base {
 	height:50px;
 	line-height: 50px;
+	cursor:pointer;
 }
 
 .base:hover {
@@ -237,12 +241,20 @@ h2 {
 .plus_minus {
  	font-size: 30px;
 	cursor: pointer;
-	margin:10px;
+	border: 2px solid rgba(0,0,0,1);
+	width:50px;
+	height:50px;
+	margin:10px auto;
+	border-radius: 2px;
+	line-height: 50px;
 }
 
 #quantity_details {
-	margin-top:300px;
+	margin-top:250px;
 	text-align: center;
+}
+#quantity {
+	font-size: 20px;
 }
 
 #size_order {
