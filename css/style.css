@@ -72,6 +72,7 @@ h2 {
 	position:absolute;
 	background: green;
 	cursor: pointer;
+	text-align: center;
 }
 
 .place_button {
@@ -173,12 +174,12 @@ h2 {
 	border: 2px solid rgba(0,0,0,1);
 }
 
-.size_title {
+.detail_title {
 	height:50px;
 	line-height: 50px;
 }
 
-.crust_details {
+.base_details {
 	position:absolute;
 	margin:30px;
 	width: 140px;
@@ -187,23 +188,20 @@ h2 {
 	top:20px;
 }
 
-.crust {
+.base {
 	height:50px;
 	line-height: 50px;
 }
 
-.crust:hover {
+.base:hover {
 	background:#A0A0A0;
 }
 
-.crusts {
+.bases {
 	border: 2px solid rgba(0,0,0,1);
 }
 
-.crust_title {
-	height:50px;
-	line-height: 50px;
-}
+
 
 .cancel_button {
 	bottom:0px;
@@ -234,4 +232,24 @@ h2 {
 	opacity:0.5;
 	-moz-opacity:0.5;
 	-khtml-opacity:0.5
+}
+
+.plus_minus {
+ 	font-size: 30px;
+	cursor: pointer;
+	margin:10px;
+}
+
+#quantity_details {
+	margin-top:300px;
+	text-align: center;
+}
+
+#size_order {
+	margin:10px;
+	font-size: 15px;
+}
+#base_order {
+	margin:10px;
+	font-size: 15px;
 }
