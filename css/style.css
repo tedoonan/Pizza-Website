@@ -1,7 +1,7 @@
 body {
         font-family: sans-serif;
         width: 1200px;
-        height:90%;
+        height:900px;
         border: 2px solid rgba(0,0,0,1);
         margin:0 auto;
         align-content:center;
@@ -24,9 +24,10 @@ h2 {
 
         
 .links {
-	background-color: #E0E0E0;
+	//background-color: #E0E0E0;
   	cursor: pointer;
   	font-size: 20px;
+
 }
 
 .type {
@@ -51,11 +52,12 @@ h2 {
 
 .pizza {
 	width: 300px;
-	height: 50px;
-	//margin: 30px;
+	height: 65px;
+	margin: 10px;
 	padding: 10px;
 	position:relative;
 	//background:#D0D0D0;
+	border: 1px solid rgba(0,0,0,0.3);
 }
 .pizza:hover {
 	background:#A0A0A0;
@@ -76,9 +78,10 @@ h2 {
 	text-align: center;
 }
 
-.place_button {
+#place_button {
 	bottom:0px;
 	right:0px;
+	display:none;
 }
 
 .add {
@@ -98,14 +101,14 @@ h2 {
 
 .order {
 	position: sticky;
-	top:100px;
+	top:200px;
 	right:100px;
 	border: 2px solid rgba(0,0,0,1);
 	width:300px;
 	height: 100px;
 	float: right;
 	margin-right:100px;
-	//padding:10px;
+	//margin-top: 100px;
 }
 
 .order_pizza {
@@ -206,6 +209,13 @@ h2 {
 }
 
 
+.pizza_price_menu {
+	position: absolute;
+	top:10px;
+	right:10px;
+	text-align: right;
+}
+
 
 .cancel_button {
 	bottom:0px;
@@ -265,3 +275,16 @@ h2 {
 	margin:10px;
 	font-size: 15px;
 }
+
+#current_type {
+	font-size:30px;
+	text-align: center;
+	width:600px;
+}
+
+#price_details {
+	font-size: 20px;
+	width:150px;
+	text-align: right;
+}
+

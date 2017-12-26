@@ -1,9 +1,12 @@
-var value_pizza_names = ['Cheese', 'Meat', 'Vegetarian']
-var traditional_pizza_names = ['Ultimate Cheese', 'Gourmet Meat', 'Wedge', 'Poo', 'dfd', 'dfdfdf', 'sasd']
+var value_pizza_names = ['Pepperoni', 'Hawaiian', 'Vegetarian', 'Cheese', 'Ham and Cheese']
+var traditional_pizza_names = ['Meat Lovers', 'Supreme Vegetarian', 'Wedge', 'Double Bacon', 'Double Meat and Cheese', 'BBQ Bacon', 'Italian', 'Triple Cheese', 'g', 'd', 's,', 'a']
+var gourmet_pizza_names = ['Ultimate Meat Lovers', 'BBQ Chicken', 'Supreme Chicken', 'Apricot Chicken', 'Spicy Chicken']
 //var current_order_names = [];
 var current_order_names = {};
 const VALUE_PRICE = 5;
 const TRADITIONAL_PRICE = 8;
+const GOURMET_PRICE = 13;
+const LARGE_EXTRA_PRICE = 3;
 
 const DEFAULT_SIZE = 'Medium';
 const DEFAULT_BASE = 'Classic';
@@ -14,13 +17,16 @@ var current_quantity = 1;
 var pizza_id_iterator = 0;
 
 function makePizzas(array, pizza_type) {
-
-  for(var i = 0; i <array.length; i++) {
+  for(var i = 0; i < array.length; i++) {
     var div = document.createElement('div');
     div.innerHTML = array[i];
     div.className = "pizza";
     div.id = array[i];
 
+    price_div = document.createElement('div');
+    price_div.innerHTML = '$' + getPizzaPriceFromName(array[i]);
+    price_div.className = "pizza_price_menu";
+    div.appendChild(price_div);
 
     add_div = document.createElement('div');
     add_div.innerHTML = 'Add to Order';
@@ -31,13 +37,38 @@ function makePizzas(array, pizza_type) {
   }
 }
 
-function getPizzaPrice(name) {
+function getPizzaPriceFromName(name, size) {
+  var price;
+
   if (value_pizza_names.indexOf(name) >= 0) {
-    return VALUE_PRICE;
+    price = VALUE_PRICE;
   } else if (traditional_pizza_names.indexOf(name) >= 0) {
-    return TRADITIONAL_PRICE;
+    price = TRADITIONAL_PRICE;
+  } else {
+    price = GOURMET_PRICE;
   }
+  if (size === 'Large') {
+    price += LARGE_EXTRA_PRICE;
+  }
+  return price;
 }
+
+/*
+function getPizzaPriceFromType(type, size) {
+  var price;
+
+  if (type == 'value') {
+    price = VALUE_PRICE;
+  } else if (type === 'traditional') {
+    price = TRADITIONAL_PRICE;
+  } else {
+    price = GOURMET_PRICE;
+  }
+  if (size === 'Large') {
+    price += LARGE_EXTRA_PRICE;
+  }
+  return price;
+}*/
 
 function displayOrder() {
   var current_order = document.getElementById("current_order");
@@ -49,7 +80,7 @@ function displayOrder() {
     mypizza = current_order_names['Cheese0'];
     num_distinct_in_order += 1;
     var div = document.createElement('div');
-    var price = getPizzaPrice(pizza.name) * pizza.quantity;
+    var price = getPizzaPriceFromName(pizza.name, pizza.size) * pizza.quantity;
     total_price += price;
     div.innerHTML = pizza.quantity + ' x ' + pizza.name;
 
@@ -82,6 +113,13 @@ function displayOrder() {
 
     document.getElementById("current_order").appendChild(div);
   });
+
+  if (num_distinct_in_order == 0) {
+    document.getElementById('place_button').style.display = 'none';
+  }
+  else {
+    document.getElementById('place_button').style.display = 'block';
+  }
 
   document.getElementById("total_price").innerHTML = "Total: $" + total_price;
   var new_height = num_distinct_in_order * 66 + 100;
@@ -173,13 +211,15 @@ $(document).ready(function(){
 
   makePizzas(value_pizza_names, 'value_pizza_type');
   makePizzas(traditional_pizza_names, 'traditional_pizza_type');
+  makePizzas(gourmet_pizza_names, 'gourmet_pizza_type');
 
 
   $('.links').click(function() {
     $('.links').not(this).removeClass("active");
   	$(this).addClass("active");
     $('.pizza_type').hide();
-    $('.pizza_type[data-link=' + $(this).data('link') + ']').show();
+    var pizza_name = $(this).data('link');
+    $('.pizza_type[data-link=' + pizza_name + ']').show();
   });
 
   $('.size').click(function(event) {
