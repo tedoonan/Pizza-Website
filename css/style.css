@@ -1,11 +1,11 @@
 body {
-        font-family: sans-serif;
-        width: 1200px;
-        height:900px;
-        border: 2px solid rgba(0,0,0,1);
-        margin:0 auto;
-        align-content:center;
-    }
+	font-family: sans-serif;
+	width: 1200px;
+	height:900px;
+	margin:0 auto;
+	align-content:center;
+	
+}
 
 h1 {
 	margin:40px;
@@ -16,7 +16,7 @@ h2 {
 	margin:10px;
 }
 
-.heading {
+#heading {
 	text-align: center;
 	margin: 60px;
 	font-size: 10px;
@@ -24,13 +24,16 @@ h2 {
 
         
 .links {
-	//background-color: #E0E0E0;
   	cursor: pointer;
   	font-size: 20px;
 
 }
 
-.type {
+.links:hover {
+	background-color: #A0A0A0;
+}
+
+#type {
 	font-size: 0;
 	margin-top: 20px;
 }
@@ -43,8 +46,6 @@ h2 {
 	background-color: #A0A0A0;
 }
 
-
-
 .links {
 	padding:10px;
 	width: 600px;
@@ -56,14 +57,15 @@ h2 {
 	margin: 10px;
 	padding: 10px;
 	position:relative;
-	//background:#D0D0D0;
-	border: 1px solid rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,1);
+	background: #FFF7C0;
+
 }
 .pizza:hover {
 	background:#A0A0A0;
 }
 
-.pizzas {
+#pizza_types {
 	margin:40px;
 }
 
@@ -73,7 +75,7 @@ h2 {
 	padding: 5px;
 	margin: 10px;
 	position:absolute;
-	background: green;
+	background: #66AB8C;
 	cursor: pointer;
 	text-align: center;
 }
@@ -99,7 +101,7 @@ h2 {
 	height: 40px;
 }
 
-.order {
+#order {
 	position: sticky;
 	top:200px;
 	right:100px;
@@ -108,7 +110,7 @@ h2 {
 	height: 100px;
 	float: right;
 	margin-right:100px;
-	//margin-top: 100px;
+	background:#6EC4DB;
 }
 
 .order_pizza {
@@ -136,14 +138,14 @@ h2 {
 	color:black;
 }
 
-.price {
+#total_price {
 	margin: 10px;
 	height: 40px;
 	padding: 5px;
 }
 
-.order_details {
-	position: absolute;
+#order_popup {
+	position: fixed;
 	width:600px;
 	height:600px;
 	background: white;
@@ -154,9 +156,10 @@ h2 {
 	margin: -300px 0 0 -300px;
 	display:none;
 	z-index:100;
+	//background:#6EC4DB;
 }
 
-.size_details {
+#size_details {
 	margin:30px;
 	width: 140px;
 	text-align: center;
@@ -185,7 +188,7 @@ h2 {
 	font-size: 20px;
 }
 
-.base_details {
+#base_details {
 	position:absolute;
 	margin:30px;
 	width: 140px;
@@ -208,7 +211,6 @@ h2 {
 	border: 2px solid rgba(0,0,0,1);
 }
 
-
 .pizza_price_menu {
 	position: absolute;
 	top:10px;
@@ -216,19 +218,18 @@ h2 {
 	text-align: right;
 }
 
-
-.cancel_button {
+#cancel_button {
 	bottom:0px;
 	right:100px;
-	background: red;
+	background: #FA7C92;
 }
 
-.accept_button {
+#accept_button {
 	bottom:0px;
 	right:0px;
 }
 
-.popup_name {
+#popup_name {
 	text-align: center;
 	margin: 20px;
 	font-size: 20px;
@@ -236,7 +237,7 @@ h2 {
 
 #cover {
 	display:none;
-	position:absolute;
+	position:fixed;
 	left:0px;
 	top:0px;
 	width:100%;
@@ -263,6 +264,7 @@ h2 {
 	margin-top:250px;
 	text-align: center;
 }
+
 #quantity {
 	font-size: 20px;
 }
@@ -271,6 +273,7 @@ h2 {
 	margin:10px;
 	font-size: 15px;
 }
+
 #base_order {
 	margin:10px;
 	font-size: 15px;

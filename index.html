@@ -2,56 +2,54 @@
 <html>
     <head>
         <title>Pizza Emporium</title>
-        <link rel="stylesheet" type = "text/css" href="css/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="myscripts.js"></script>
+        <link rel='stylesheet' type = 'text/css' href='css/style.css'>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script src='myscripts.js'></script>
     </head>
 
     <body>
         
-        <div class = "heading">
+        <div id='heading'>
             <h1>Pizza Emporium</h1>
-            <div class="type">
-                <span class = "links active" id="value" data-link="value">Value</span>
-                <span class = "links" id="traditional" data-link="traditional">Traditional</span>
-                <span class = "links" id="gourmet" data-link="gourmet">Gourmet</span>
+            <div id='type'>
+                <span class = 'links active' id='value' data-link='value'>Value</span>
+                <span class = 'links' id='traditional' data-link='traditional'>Traditional</span>
+                <span class = 'links' id='gourmet' data-link='gourmet'>Gourmet</span>
             </div>
         </div>
-        <div class="home">
-            <div class='order' id = 'order'>
-                <h2>Order</h2>
-                <div id='current_order'></div>
-                
-                <div class='place'>
-                    <span class='price' id = total_price>Total: $0</span>
-                    <span class = 'button' id='place_button'> Place Order </span>
-                </div>
+        <div id = 'order'>
+            <h2>Order</h2>
+            <div id='current_order'></div>
+            
+            <div class='place'>
+                <span id='total_price'>Total: $0</span>
+                <span class='button' id='place_button'> Place Order </span>
             </div>
+        </div>
 
-        <div class="pizzas">
+        <div id='pizza_types'>
 
-            <div class="pizza_type" id="value_pizza_type" data-link="value">
+            <div class='pizza_type' id='value_pizza_type' data-link='value'>
                
             </div>
-            <div class="pizza_type" id="traditional_pizza_type" data-link="traditional">
+            <div class='pizza_type' id='traditional_pizza_type' data-link='traditional'>
 
             </div>
-            <div class="pizza_type" id="gourmet_pizza_type" data-link="gourmet">
+            <div class='pizza_type' id='gourmet_pizza_type' data-link='gourmet'>
 
             </div>
         </div>
-        <div class='order_details' id='order_popup'>
-            <div class='popup_name' id='popup_name'>
-            </div>
+        <div id='order_popup'>
+            <div id='popup_name'></div>
             
-            <div class='size_details'>
+            <div id='size_details'>
                 <div class='detail_title'>Size</div>
                 <div class='sizes'>
-                    <div class='size preview' id="Medium">Medium</div>
-                    <div class='size' id="Large">Large</div>
+                    <div class='size preview' id='Medium'>Medium</div>
+                    <div class='size' id='Large'>Large</div>
                 </div>
             </div>
-            <div class='base_details'>
+            <div id='base_details'>
                 <div class='detail_title'>Base</div>
                 <div class='bases'>
                     <div class='base' id='Thin'>Thin</div>
@@ -64,20 +62,20 @@
                 <div class='detail_title'>
                     Quantity
                 </div>
-                <div class="counter">
-                    <div class="plus_minus" id="plus">+</div>
-                    <div id="quantity">1</div>
-                    <div class="plus_minus" id="minus">-</div>
+                <div class='counter'>
+                    <div class='plus_minus' id='plus'>+</div>
+                    <div id='quantity'>1</div>
+                    <div class='plus_minus' id='minus'>-</div>
                 </div>
             </div>
-            <div class='cancel_button button'>
+            <div class='button' id='cancel_button'>
                 Cancel
             </div>
-            <div class='accept_button button'>
+            <div class='button' id='accept_button'>
                 Accept
             </div>
         </div>
-        <div id="cover"></div>
+        <div id='cover'></div>
 
     </body>
 
